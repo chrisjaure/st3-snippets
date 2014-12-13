@@ -1,0 +1,41 @@
+<snippet>
+  <content><![CDATA[
+describe('${1:SuiteName}', function() {
+
+	var scope, \$httpBackend, initController;
+
+	beforeEach(function() {
+		module('${2:ModuleName}', function(\$provide){
+		
+		});
+		inject(function(\$injector) {
+			var \$rootScope, \$controller;
+			\$rootScope = \$injector.get('\$rootScope');
+			\$controller = \$injector.get('\$controller');
+			\$httpBackend = \$injector.get('\$httpBackend');
+			scope = \$rootScope.\$new();
+
+			initController = function(opts) {
+				\$controller('${3:ControllerName}', angular.extend({
+					\$scope: scope
+				}, (opts || {})));
+			};
+		});
+	});
+
+	afterEach(function() {
+		// \$httpBackend.verifyNoOutstandingExpectation();
+		// \$httpBackend.verifyNoOutstandingRequest();
+		scope.\$destroy();
+	});
+
+	it('should pass', function() {
+		// \$httpBackend.expectGET('').respond(200);
+		initController();
+	});
+
+});
+]]></content>
+	<tabTrigger>ng:test:c</tabTrigger>
+	<scope>source.js</scope>
+</snippet>

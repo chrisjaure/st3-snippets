@@ -1,0 +1,38 @@
+<snippet>
+  <content><![CDATA[
+describe('${1:SuiteName}', function() {
+
+	var elm, scope, isolateScope,
+		html = '${3:<div>Element Template</div>}';
+
+	beforeEach(function() {
+		module('${2:ModuleName}', function(\$provide){
+		
+		});
+		inject(function(\$injector) {
+			var \$compile, \$templateCache, \$rootScope;
+			\$compile = \$injector.get('\$compile');
+			\$rootScope = \$injector.get('\$rootScope');
+			// \$templateCache = \$injector.get('\$templateCache');
+			// \$templateCache.put('${4:templateUrl}', '<div></div>');
+			elm = angular.element(html);
+			scope = \$rootScope.\$new();
+			\$compile(elm)(scope);
+			scope.\$digest();
+			// isolateScope = elm.isolateScope();
+		});
+	});
+
+	afterEach(function() {
+		scope.\$destroy();
+	});
+
+	it('should pass', function() {
+
+	});
+
+});
+]]></content>
+	<tabTrigger>ng:test:d</tabTrigger>
+	<scope>source.js</scope>
+</snippet>

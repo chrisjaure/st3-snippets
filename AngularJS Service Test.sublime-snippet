@@ -1,0 +1,31 @@
+<snippet>
+  <content><![CDATA[
+describe('${1:SuiteName}', function() {
+
+	var ${3:ServiceName}, scope;
+
+	beforeEach(function() {
+		module('${2:ModuleName}', function(\$provide){
+		
+		});
+		inject(function(\$injector) {
+			var \$rootScope;
+			\$rootScope = \$injector.get('\$rootScope');
+			${3:ServiceName} = \$injector.get('${3:ServiceName}');
+			scope = \$rootScope.\$new();
+		});
+	});
+
+	afterEach(function() {
+		scope.\$destroy();
+	});
+
+	it('should pass', function() {
+
+	});
+
+});
+]]></content>
+	<tabTrigger>ng:test:s</tabTrigger>
+	<scope>source.js</scope>
+</snippet>
