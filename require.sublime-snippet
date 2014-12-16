@@ -1,0 +1,5 @@
+<snippet>
+	<content><![CDATA[var $2 = require('$1');]]></content>
+	<tabTrigger>req</tabTrigger>
+	<scope>source.js</scope>
+</snippet>
