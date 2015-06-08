@@ -2,8 +2,8 @@
   <content><![CDATA[
 describe('${1:SuiteName}', function() {
 
-	var elm, scope, isolateScope,
-		html = '${3:<div>Element Template</div>}';
+	var elm, scope, isolateScope;
+	var html = '${3:<div>Element Template</div>}';
 
 	beforeEach(function() {
 		module('${2:ModuleName}', function(\$provide){
