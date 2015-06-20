@@ -1,0 +1,17 @@
+<snippet>
+    <content><![CDATA[
+import React from 'react';
+
+export default class ${1:Component} extends React.Component {
+	render() {
+		return (
+			${2:<div></div>}
+		);
+	}
+}
+
+]]></content>
+    <tabTrigger>react</tabTrigger>
+    <scope>source.js</scope>
+    <description>React ES6 component</description>
+</snippet>
