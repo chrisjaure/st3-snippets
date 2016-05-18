@@ -2,26 +2,29 @@
   <content><![CDATA[
 describe('${1:SuiteName}', function() {
 
-	var ${3:ServiceName}, scope;
+	var ${3:ServiceName}, scope, \$httpBackend;
 
 	beforeEach(function() {
 		module('${2:ModuleName}', function(\$provide){
-		
+
 		});
 		inject(function(\$injector) {
 			var \$rootScope;
 			\$rootScope = \$injector.get('\$rootScope');
+			\$httpBackend = \$injector.get('\$httpBackend');
 			${3:ServiceName} = \$injector.get('${3:ServiceName}');
 			scope = \$rootScope.\$new();
 		});
 	});
 
 	afterEach(function() {
+		// \$httpBackend.verifyNoOutstandingExpectation();
+		// \$httpBackend.verifyNoOutstandingRequest();
 		scope.\$destroy();
 	});
 
 	it('should pass', function() {
-
+		// \$httpBackend.expectGET('').respond(200);
 	});
 
 });
